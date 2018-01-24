@@ -1,12 +1,12 @@
 FROM alpine:3.6
 
 ENV PUPPET_VERSION="5.3.2" \
-	  FACTER_VERSION="2.5.1" \
+    FACTER_VERSION="2.5.1" \
     CONFIG_DIR="/var/docker/conf" \
     LOGS_DIR="/var/docker/logs"
 
 ENV PUPPET_CONFIG=${CONFIG_DIR}"/puppetagent.config" \
-	  SUPERVISORCONF=${CONFIG_DIR}"/supervisord.conf"
+    SUPERVISORCONF=${CONFIG_DIR}"/supervisord.conf"
 
 LABEL org.label-schema.author="xxx@xxx.com" \
       org.label-schema.vendor="Puppet/Bind" \
@@ -22,11 +22,11 @@ RUN apk add --update \
     ruby \
     ruby-irb \
     ruby-rdoc \
-	  bind \
-	  python \
-	  py-pip \
-	  && pip install supervisor \
-	  && mkdir -p ${LOGS_DIR} ${CONFIG_DIR} \
+    bind \
+    python \
+    py-pip \
+    && pip install supervisor \
+    && mkdir -p ${LOGS_DIR} ${CONFIG_DIR} \
     && apk add --update shadow \
     && rm -rf /var/cache/apk/* \
     && rm -rf /etc/bind/* \
