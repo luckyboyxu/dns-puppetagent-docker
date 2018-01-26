@@ -10,7 +10,7 @@ echo "$IP  $HOSTNAME" > /etc/hosts
 # Puppet config
 cat << EOF > $PUPPET_CONFIG
 [main]
-certname = $CERTNAME.dns.dji.com
+certname = $CERTNAME.dns.xx.com
 environment = production
 runinterval = 300
 EOF
